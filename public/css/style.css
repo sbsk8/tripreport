@@ -1,0 +1,421 @@
+/* @charset "utf-8"; */
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, address,
+ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  list-style-type: none;
+  border-collapse: collapse;
+}
+textarea { font-size: 100%; vertical-align:middle;}
+img { border-style: none; }
+hr { display: none; }
+em{font-style: normal}
+input{line-height:auto;vertical-align:middle;}
+strong.more{color:#c30}
+a{text-decoration: none;}
+body {
+  font-family:‘ヒラギノ角ゴ Pro W3’,‘Hiragino Kaku Gothic Pro’,‘メイリオ‘,Meiryo,‘ＭＳ Ｐゴシック’,sans-serif;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/**ログインページ*/
+
+.login_body {
+  margin: 0;
+  padding: 0;
+  background-color: #17a2b8;
+  height: 100vh;
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 50px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+
+
+
+
+
+/**index*/
+
+.jumbotron {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+  background-color: #6699CC;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  font-weight: 300;
+  color:#fff;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+/**ヘッダー*/
+.header{
+  display: flex;
+  justify-content: space-between;
+  height:60px;
+  background-color: #cdcdcd;
+  border-bottom: 2px solid darkgrey;
+
+}
+.heder_left a{
+  margin-left:30px;
+  color: white;
+}
+.header_right a{
+  margin-right:30px;
+  color: white;
+}
+.contents{
+  margin: auto;
+  width:85%;
+  padding-top:50px;
+  padding-bottom:20px;
+}
+.contents h1{
+  font-size: 30px;
+  font-weight: bold;
+}
+.review{
+  height:300px;
+  box-shadow:0 .125rem .25rem
+}
+
+.mypage{
+  width: 80%;
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #EAEAEA;
+  border-radius: 0.5rem;
+}
+#profile-img{
+  margin:0 20px;
+}
+.username{
+  width: 40%;
+  margin-left:15px;
+  padding-top:20px;
+}
+.username p{
+  font-weight: bold;
+}
+
+.acount-contens{
+  margin-top:50px;
+  text-align: center;
+  width: 75%;
+}
+.acountdetail-btn{
+  width: 60%;
+  font-size: 23px;
+  font-weight: bold;
+  margin-top:10px;
+  padding:7px 0;
+  border-radius: 0.8rem;
+}
+.acountdetail-btn a{
+  color: #fff;
+  text-decoration: none;
+}
+.acountdetail-btn a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+.detail-btn{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top:10px;
+  padding:7px 0;
+  border-radius: 0.8rem;
+  justify-content: center;
+}
+.detail-btn a{
+  color: #fff;
+  text-decoration: none;
+}
+.detail-btn a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* 星評価 */
+.rate-form {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.rate-form input[type=radio] {
+  display: none;
+}
+.rate-form label {
+  position: relative;
+  padding: 0 5px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 35px;
+}
+.rate-form label:hover {
+  color: #ffcc00;
+}
+.rate-form label:hover ~ label {
+  color: #ffcc00;
+}
+.rate-form input[type=radio]:checked ~ label {
+  color: #ffcc00;
+}
+
+
+/**編集画面*/
+.newrepo{
+  margin-top:10px;
+  margin-bottom:100px;
+  padding-bottom:20px;
+  overflow: hidden;
+}
+.report{
+  width: 90%;
+  text-align: center;
+  margin: auto;
+}
+.border-info{
+  margin: auto;
+  width: 70%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 0.8rem;
+}
+.report h3{
+  margin:10px 0;
+  font-size: 35px;
+
+}
+.formgroup label{
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom:10px;
+  width:100%;
+}
+textarea.form-control{
+  background-color: #fff;
+}
+input.form-control{
+  background-color: #fff;
+}
+.imgfile{
+  margin:20px 0;
+  width:100%;
+  padding-left:50px;
+}
+.tocomf{
+  padding-top: 20px;
+  width:200px;
+  margin: auto;
+}
+.display-flex{
+  display: flex;
+}
+.conf_form{
+  padding-bottom: 20px;
+}
+/* .formtitle{
+  width: 100%;
+  border-color: #cdcdcd;
+  margin: auto;
+} */
+.form-control-image{
+  display: block;
+  width: 70%;
+  justify-content: center;
+  margin: auto;
+}
+
+.rate-form{
+  justify-content: center;
+}
+
+.acount-label{
+  width: 100%;
+  margin: auto;
+  padding-bottom:20px;
+}
+.acount-cont{
+  padding-bottom: 30px;
+}
+.acount-contener{
+  width:40%;
+  margin:auto;
+  padding-bottom: 20px;
+}
+.form-userup{
+  width: 85%;
+  margin:auto;
+}
+.img-thumbnail{
+  margin: auto;
+  margin-top: 25px;
+  max-width:75%;
+}
+.card-body{
+  flex:none;
+}
+
+.not{ 
+  color:red;
+  width: 100%;
+  margin: auto;
+}
+
+/**　いいね機能　*/
+.liked {
+  background-color: rgb(229 51 27);
+  border:rgb(215, 31, 7);
+}
+.liked:hover{
+  color:#fff;
+  background-color: rgb(215, 31, 7);
+  border:rgb(215, 31, 7);
+}
+
+.confirm-text{
+  width: 70%;
+  border:1px solid #6699CC;
+  margin: auto;
+}
+.label{
+  width: 100%;
+  background-color: #6699cc;
+}
+.ans{
+  width: 85%;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.nice{
+  padding-top: 25px;
+}
+.goodbutton{
+  margin-top:20px;
+}
+.bottan{
+  margin-top:10px;
+}
+.logform{
+  background-image:url(../build/img/IMG-5902.JPG);
+  background-size: cover;
+}
+.sitetitle{
+  width:400px;
+  height:250px;
+  background-color:#fff;
+  opacity: 0.7;
+  justify-content: center;
+}
+.sitetitle h2{
+  margin:10px 0 0 5px;
+  font-size: 30px;
+}
+.title{
+  justify-content: center;
+  margin-top:80px;
+}
+.text-width{
+  color:#fff;
+}
+.atend{
+  --bs-text-opacity: 1;
+  color:#000080;
+}
+
+@media (max-width: 768px) {
+  .acount-contener{
+    width:100%;
+    margin:auto;
+    padding-bottom: 20px;
+  }
+
+  .mypage{
+    display:block;
+    text-align: center;
+  }
+  .mypage img{
+    margin: auto;
+  }
+  .username{
+    margin: auto;
+  }
+  .acount-contens{
+    margin: auto;
+    width: 100%;
+  }
+  .jumbotron {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .form-control-image {
+    display: block;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+  }
+  .newrepo {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 100px;
+    overflow: hidden
+  }
+  
+  .label{
+    width: 100%;
+    background-color: #fdd;
+  }
+  .confirm-text{
+    width: 100%;
+  }
+
+}
+
