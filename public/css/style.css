@@ -383,6 +383,22 @@ input.form-control{
 .container ul{
   margin-top: 50px;
 }
+.table_sb th{
+  font-weight: bold;
+}
+.adcontener_title{
+  background-color: cadetblue;
+  color: #fff;
+  height: 50px;
+}
+.adcontener_title p{
+  padding:15px 20px 0 20px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.table{
+  margin-top:20px;
+}
 
 @media (max-width: 768px) {
   .acount-contener{

@@ -1,5 +1,4 @@
 <?php
-var_dump($users);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -18,10 +17,45 @@ var_dump($users);
 </header>
 
 <main>
+    <div class="container">
+        <div class="adcontener_title">
+            <p>アカウント一覧</p>
+        </div>
 
+        <table class = "table">
+            <tr class = "table_sb">
+                <th>id</th>
+                <th>氏名</th>
+                <th>メールアドレス</th>
+                <th>投稿一覧</th>
+                <th>削除</th>
+            </tr>
 
+            @foreach($users as $column)
+            <tr>
+                <td>{{ $column->id }}</td>
+                <td>{{ $column->name }}</td>
+                <td>{{ $column->email }}</td>
+                <!-- /**編集 */ -->
+                <td><a href ="">投稿一覧</a></td>
+                <!-- /**削除 */ -->
+                <form method="post">
+                    @csrf
+                <td><a href="" onclick ="return confirm('本当に削除しますか？')">削除</a></td>
+                <!-- //編集をクリックでIDを送る-->
+                </form>
+            </tr>
+            @endforeach
+        </table>
+    </div>
 </main>
 
 <fooder>
+    <div class="container">
+        <p class="float-right">
+          <a href="#">トップに戻る</a>
+        </p>
+    </div>
+    
 </fooder>
 
