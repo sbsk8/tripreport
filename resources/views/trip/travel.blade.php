@@ -40,8 +40,17 @@
 
             </div>
 
+            <div class="formgroup">
+                <label for="title">都道府県</label>
+                <select type="text" class=" prefecture" name="area">                          
+                    @foreach(config('pref') as $key => $score)
+                        <option value="{{ $score }}">{{ $score }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="form-group">
-                <label for="star">スター</label>
+                <label for="title">スター</label>
                 <div class="rate-form">
                     <input id="star5" type="radio" name="rate" value="5">
                     <label for="star5">★</label>

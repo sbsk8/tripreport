@@ -38,6 +38,7 @@ class HomeController extends Controller
                 ])
             ->orderBy('countnum','desc')
             ->where('publish_status','=',2)
+            ->limit(4)
             ->get();
 
         $usertravel = DB::table('destination as d')
@@ -47,9 +48,16 @@ class HomeController extends Controller
                 ])
             ->where('user_id','=',$user)
             ->orderBy('id','desc')
-            ->get();
+            ->get(); 
 
         return view('home',compact('usertravel','othertravel'));
+    }
+    /* *
+     *管理者ログイン画面
+    * */
+    public function adminuser()
+    {
+        return veiw('auth.admin');
     }
 
 

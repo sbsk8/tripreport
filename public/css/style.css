@@ -238,6 +238,13 @@ footer p {
   margin-bottom:10px;
   width:100%;
 }
+.form-group title{
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom:10px;
+  width:100%;
+}
 textarea.form-control{
   background-color: #fff;
 }
@@ -271,6 +278,10 @@ input.form-control{
   justify-content: center;
   margin: auto;
 }
+/* .prefecture{
+  justify-content: center;
+  width: 100px;
+} */
 
 .rate-form{
   justify-content: center;

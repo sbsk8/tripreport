@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('travel');
             $table->string('photo');
+            
             $table->integer('recomment');
             $table->text('commment');
             $table->integer('publish_status');
