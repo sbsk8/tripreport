@@ -55,11 +55,6 @@
                     </form>
                 </div>
             </div>
-            <div class="row mb-0">
-                <a class="btn btn-link" href="{{ route ('adminuser') }}">
-                    {{__('管理者としてログインはこちら')}}
-                </a>
-            </div>
         </div>
     </div>
 </div>

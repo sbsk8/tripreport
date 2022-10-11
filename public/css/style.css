@@ -380,6 +380,9 @@ input.form-control{
   --bs-text-opacity: 1;
   color:#000080;
 }
+.container ul{
+  margin-top: 50px;
+}
 
 @media (max-width: 768px) {
   .acount-contener{

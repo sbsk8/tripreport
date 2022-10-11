@@ -19,7 +19,7 @@
 
   <main role="main">
 
-    <section class="jumbotron text-center">
+    <section class="jumbotron text-center" <?= $acount->role === 0 ? '': 'style = "display:none"';?>>
       <div class="container">
         <h1>自分の投稿をみる</h1>
         <p class="lead atend">自分の旅を記録しよう！</p>
@@ -27,7 +27,7 @@
       </div>
     </section>
 
-    <div class="album py-5 bg-light">
+    <div class="album py-5 bg-light"  <?= $acount->role === 0 ? '': 'style = "display:none"';?>>
       <div class="container">
         <div class="row">
           @foreach($usertravel as $column)
@@ -65,6 +65,18 @@
         </div>
       </div>
     </div>
+
+    <section <?= $acount->role === 1 ? '': 'style = "display:none"';?>>
+      <div class="jumbotron text-center">
+        <h1>管理者ユーザーメニュー</h1>
+      </div>
+      <div class="container">
+        <ul >
+          <li><a href="{{ route ('userAll') }}">アカウント管理画面へ</a></li>
+          <li><a href="">お問い合わせ内容確認</a></li>
+        </ul>
+      </div>
+    </section>
 
     <section class="jumbotron text-center">
       <div class="container">
@@ -115,6 +127,7 @@
     </div>
 
   </main>
+
 
   <footer class="text-muted">
     <div class="container">

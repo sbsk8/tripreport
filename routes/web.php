@@ -20,7 +20,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 Auth::routes();
-Route::get('/auth/admin',[App\Http\Controllers\HomeController::class,'adminuser'])->name('adminuser');
+Route::get('/auth/admin',[App\Http\Controllers\HomeController::class,'Adminuser'])->name('Adminuser');
+Route::post('/auth/admin',[App\Http\Controllers\HomeController::class,'Adminuser'])->name('Adminuser');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -78,3 +79,7 @@ Route::post('/good',[App\Http\Controllers\GoodController::class,'favorite'])->na
 
 
 Route::post('/like/{id}',[App\Http\Controllers\GoodController::class,'like'])->name('like');
+
+/** 管理者用 */
+Route::get('/manegimant',[App\Http\Controllers\AcountController::class,'userAll'])->name('userAll');
+Route::post('/manegimant',[App\Http\Controllers\AcountController::class,'userAll'])->name('userAll');
