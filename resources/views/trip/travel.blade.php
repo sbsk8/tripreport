@@ -42,7 +42,10 @@
 
             <div class="formgroup">
                 <label for="title">都道府県</label>
-                <select type="text" class=" prefecture" name="area">                          
+                @if ($errors->has('area'))
+				    <span class="not">{{ $errors->first('area') }}</span>
+			    @endif
+                <select type="text" class="prefecture" name="area">                          
                     @foreach(config('pref') as $key => $score)
                         <option value="{{ $score }}">{{ $score }}</option>
                     @endforeach

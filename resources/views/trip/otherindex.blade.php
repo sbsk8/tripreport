@@ -17,6 +17,18 @@
   </header>
 
   <main role="main">
+    <section class="text-center">
+      <p>都道府県から検索</p>
+        <form class="search_form">
+            <select type="text" class="prefecture" name="area">                          
+                @foreach(config('pref') as $key => $score)
+                    <option value="{{ $score }}">{{ $score }}</option>
+                @endforeach
+            </select>
+            <button type="button" class="btn btn-sm btn-outline-secondary"><a class="search_button" href="{{ route('search') }}">検索</a></button>
+        </form>
+    </section>
+
     <section class="jumbotron text-center">
       <div class="container">
         <h1>公開された投稿一覧</h1>

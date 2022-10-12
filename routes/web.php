@@ -79,6 +79,9 @@ Route::post('/good',[App\Http\Controllers\GoodController::class,'favorite'])->na
 
 
 Route::post('/like/{id}',[App\Http\Controllers\GoodController::class,'like'])->name('like');
+/**検索 */
+Route::get('/search',[App\Http\Controllers\TripController::class,'search'])->name('search');
+Route::post('/search',[App\Http\Controllers\TripController::class,'search'])->name('search');
 
 /** 管理者用 */
 Route::get('/manegimant',[App\Http\Controllers\AcountController::class,'userAll'])->name('userAll');

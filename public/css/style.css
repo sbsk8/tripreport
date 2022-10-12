@@ -399,6 +399,12 @@ input.form-control{
 .table{
   margin-top:20px;
 }
+.search_form{
+  margin-bottom: 15px;
+}
+.search_button{
+  margin-bottom: 0%;
+}
 
 @media (max-width: 768px) {
   .acount-contener{
@@ -446,6 +452,5 @@ input.form-control{
   .confirm-text{
     width: 100%;
   }
-
 }
 

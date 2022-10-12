@@ -18,13 +18,7 @@
 </header>
 
   <main role="main">
-  <section class="text-center">
-    <p>都道府県から検索</p>
-  <form>
-    <input type="text"></input>
-      <p>検索</p>
-  </form>
-  </section>
+
 
     <section class="jumbotron text-center" <?= $acount->role === 0 ? '': 'style = "display:none"';?>>
       <div class="container">
