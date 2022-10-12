@@ -86,3 +86,9 @@ Route::post('/search',[App\Http\Controllers\TripController::class,'search'])->na
 /** 管理者用 */
 Route::get('/manegimant',[App\Http\Controllers\AcountController::class,'userAll'])->name('userAll');
 Route::post('/manegimant',[App\Http\Controllers\AcountController::class,'userAll'])->name('userAll');
+/**管理者権限削除 */
+Route::get('manegimant/del,{id}',[App\Http\Controllers\AcountController::class,'addelete'])->name('addelete');
+Route::post('manegimant/del,{id}',[App\Http\Controllers\AcountController::class,'addelete'])->name('addelete');
+/**アカウント削除 */
+Route::get('manegimant/userdel,{id}',[App\Http\Controllers\AcountController::class,'userdelete'])->name('userdelete');
+Route::post('manegimant/userdel,{id}',[App\Http\Controllers\AcountController::class,'userdelete'])->name('userdelete');

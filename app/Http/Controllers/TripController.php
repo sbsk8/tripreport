@@ -202,6 +202,8 @@ class TripController extends Controller
     */
     public function otherdetail($id){
         $user = Auth::id();
+        $users = DB::table('users');
+        $acount = $users->find($user);
         $destination = DB::table('destination');
         $data =$destination->find($id);
 
@@ -210,7 +212,7 @@ class TripController extends Controller
                 ->where('user_id','=',$user)
                 ->where('destination_id','=',$id)
                 ->first();
-        return view('trip.otherdetail',compact('data','good'));
+        return view('trip.otherdetail',compact('data','good','acount'));
     }
     /**
      * 検索結果

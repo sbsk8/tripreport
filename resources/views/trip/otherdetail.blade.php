@@ -73,6 +73,14 @@ ini_set('display_errors',1);
             <button type="button" class="btn btn-sm btn-outline-secondary"><a href="javascript:history.back();">戻る</button>
         </div>
         </form>
+
+        <!-- /***管理者ユーザー用削除 */ -->
+        <section <?= $acount->role === 1 ? '': 'style = "display:none"';?>>
+        <div class="display-flex detail-btn">
+            <div class="tocomf">
+                <button type="button" class="btn btn-danger"><a href="{{ route('addelete',['id' => $data->id]) }}" onclick ="return confirm('この内容を削除します。よろしいですか？')">この投稿を削除</a></button>
+            </div>
+        </div>
     </div>
 </main>
 

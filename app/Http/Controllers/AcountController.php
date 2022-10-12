@@ -19,12 +19,26 @@ class AcountController extends Controller
     }
 
     /** アカウント削除 */
-    public function userdelete(){
+    public function userdelete($id){
+        $contents = DB::table('destination');
+        $contents->where('user_id','=',$id);
+        $contents->delete();
+
+        $users = DB::table('users');
+        $users->find($id);
+        $users->delete($id);
+
+        return redirect()->route('userAll')->with('flash_message','※アカウントを削除しました');
 
     }
     /** 投稿削除 */
-    public function scrapdelete(){
-
+    public function addelete($id){
+        $destination = DB::table('destination');
+        $destination->find($id);
+        // $column = $contacts::findOrFail($id);
+        $destination->delete($id);
+    
+        return redirect()->route('home')->with('flash_message','※投稿を削除しました');
     }
 
 }

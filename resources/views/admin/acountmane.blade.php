@@ -41,7 +41,7 @@
                 <!-- /**削除 */ -->
                 <form method="post">
                     @csrf
-                <td><a href="" onclick ="return confirm('本当に削除しますか？')">削除</a></td>
+                <td><a href="{{ route('userdelete',['id' => $column->id]) }}" onclick ="return confirm('本当に削除しますか？')">削除</a></td>
                 <!-- //編集をクリックでIDを送る-->
                 </form>
             </tr>
