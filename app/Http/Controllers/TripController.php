@@ -111,7 +111,7 @@ class TripController extends Controller
             'comment' => $content,
             'publish_status' => $public_check,
             'user_id' => $user_id,
-            'prefecture' =>$area
+            'prefecture' =>$area,
         ]);
         return view('trip.complite',compact('destination'));
     }

@@ -19,6 +19,19 @@
 
   <main role="main">
 
+    <section class="jumbotron text-center" <?= $acount->role === 1 ? '': 'style = "display:none"';?>>
+      <div class="container">
+        <h1>管理者メニュー</h1>
+      </div>
+    </section>
+
+    <div class="admincon"  <?= $acount->role === 1 ? '': 'style = "display:none"';?>>
+      <ul class="container">
+        <li><a href="{{ route('userAll') }}">アカウント管理</a></li>
+        <li><a href="#">お問い合わせ内容確認</a></li>
+      </ul>
+    </div>
+
     <section class="jumbotron text-center" <?= $acount->role === 0 ? '': 'style = "display:none"';?>>
       <div class="container">
         <h1>自分の投稿をみる</h1>

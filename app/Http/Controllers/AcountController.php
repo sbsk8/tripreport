@@ -13,6 +13,28 @@ use App\Models\User;
 class AcountController extends Controller
 {
 
+    public function userAll(){
+        $user = DB::table('users')->get();
 
-    
+        return view('admin.acountmane',['user' =>$user]);
+    }
+
+    /**管理者権限投稿削除 */
+    public function addelete($id){
+        return redirect()->route('home')->with('flash_message','※投稿を削除しました');
+    }
+
+    /**ユーザー削除 */
+    public function userdelete($id){
+        $contents = DB::table('destination');
+        $contents->where('user_id','=',$id);
+        $contents->delete();
+
+        $users = DB::table('users');
+        $users->find($id);
+        $users->delete($id);
+        return view('admin.acountmane');
+    }
+
+
 }

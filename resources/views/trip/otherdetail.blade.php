@@ -34,6 +34,11 @@ ini_set('display_errors',1);
             </div>
 
             <div class="form-group">
+                <label for="area" class="font-weight-bold label">都道府県</label><br>
+                <p class="ans">{{ $data->prefecture }}</p>
+            </div>
+
+            <div class="form-group">
                 <label for="star" class="font-weight-bold label">スター</label>
                     <div class="rate-form">
                       @if($data->recomment === 5 )
@@ -73,6 +78,10 @@ ini_set('display_errors',1);
             <button type="button" class="btn btn-sm btn-outline-secondary"><a href="javascript:history.back();">戻る</button>
         </div>
         </form>
+        <div class="tocomf"  <?= $acount->role === 0 ? '': 'style = "display:none"';?>>
+            <button type="button" class="btn btn-danger"><a href="{{ route('addelete',['id' => $data->id]) }}" onclick ="return confirm('この内容を削除します。よろしいですか？')">削除</a></button>
+            </div>
+
     </div>
 </main>
 

@@ -31,6 +31,11 @@
             </div>
 
             <div class="form-group">
+                <h5><label for="area" class="font-weight-bold label">都道府県</label></h5><br>
+                <p>{{ $data->prefecture }}</p>
+            </div>
+
+            <div class="form-group">
                 <label for="star" class="font-weight-bold label">スター</label>
                     <div class="rate-form">
                       @if($data->recomment === 5 )
