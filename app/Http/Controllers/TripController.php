@@ -211,5 +211,21 @@ class TripController extends Controller
         return view('trip.otherdetail',compact('data','good'));
     }
 
+    /**検索結果 */
+    public function serch(Request $request){
+        $place = $request['area'];
+        $serchtravel = DB::table('destination as d')
+        ->select([
+            'd.id','d.travel','d.photo',
+            DB::raw("(SELECT COUNT(user_id) FROM goods as g WHERE g.destination_id = d.id ) as countnum")
+            ])
+        ->orderBy('countnum','desc')
+        ->where('publish_status','=',2)
+        ->where('prefecture','=',$place)
+        ->get();
+        $count_travel = $serchtravel->count();
+        return view('trip.seachresult',compact('place','count_travel'));
+    }
+
 
 }
