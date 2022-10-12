@@ -29,8 +29,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
         $user = Auth::id();
+        $users = DB::table('users');
+        $acount = $users->find($user);
         $othertravel = DB::table('destination as d')
             ->select([
                 'd.id','d.travel','d.photo','d.recomment',
@@ -49,7 +50,7 @@ class HomeController extends Controller
             ->orderBy('id','desc')
             ->get();
 
-        return view('home',compact('usertravel','othertravel'));
+        return view('home',compact('usertravel','othertravel','acount'));
     }
 
 

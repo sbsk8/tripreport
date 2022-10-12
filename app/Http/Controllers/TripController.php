@@ -47,6 +47,7 @@ class TripController extends Controller
             'image' => ['required','image'],
             'content' =>'required',
             'public_check' => 'required',
+            'area' => 'required',
         ]);
 
         $post_data = $request->except('image');
@@ -59,6 +60,7 @@ class TripController extends Controller
         $content = $post_data['content'];
         $public_check = $post_data['public_check'];
         $rate = $post_data['rate'];
+        $area = $post_data['area'];
 
 
         $data = array(
@@ -68,6 +70,7 @@ class TripController extends Controller
             'content' => $content,
             'public_check'=> $public_check,
             'rate' =>$rate,
+            'area' =>$area,
         );
         $request->session()->put('data', $data);
         return view('trip.confirm', compact('data') );
@@ -82,6 +85,7 @@ class TripController extends Controller
         $content = $data['content'];
         $rate = $data['rate'];
         $public_check = $data['public_check'];
+        $area = $data['area'];
         $user_id = Auth::id();
 
         $temp_path = $data['temp_path'];
@@ -107,6 +111,7 @@ class TripController extends Controller
             'comment' => $content,
             'publish_status' => $public_check,
             'user_id' => $user_id,
+            'prefecture' =>$area
         ]);
         return view('trip.complite',compact('destination'));
     }

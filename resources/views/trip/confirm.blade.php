@@ -40,6 +40,12 @@ session_start();
                 </div>
 
                 <div class="formgroup">
+                    <label for="title">都道府県</label><br>
+                    <p>{{ $data['area'] }}</p>
+                    <input type="hidden" name="area" class="formtitle" value="{{ $data['area'] }}">
+                </div>
+
+                <div class="formgroup">
                     <label for="star">スター</label>
                     <div class="rate-form">
                         @if($data['rate'] === "5" )

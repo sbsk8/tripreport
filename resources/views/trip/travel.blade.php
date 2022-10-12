@@ -37,7 +37,15 @@
 				<span class="not">{{ $errors->first('title') }}</span>
 			    @endif
                 <input type="text" name="title" class="form-control" value="{{ old('title')  }}">
+            </div>
 
+            <div class="formgroup">
+            <label for="title">都道府県</label><br>
+                <select type="text" class="prefecture" name="area">                          
+                    @foreach(config('pref') as $key => $score)
+                        <option value="{{ $score }}">{{ $score }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group">
