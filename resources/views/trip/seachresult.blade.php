@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -22,9 +25,9 @@
                     <option value="{{ $score }}">{{ $score }}</option>
                 @endforeach
             </select>
-            <button type="button" class="btn btn-sm btn-outline-secondary"><p class="search_button">検索</p></button>
+            <p><input type="submit" class="btn btn-sm btn-outline-secondary" value="検索"></p>
         </form>
-        <p class="lead atend">都道府県、ヒットした件数：</p>
+        <p class="lead atend">"{{ $place }}" でヒットした件数： {{ $count_travel }} 件</p>
     </section>
 
     <section class="jumbotron text-center">
@@ -32,6 +35,29 @@
         <h1>検索結果一覧</h1>
       </div>
     </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          @foreach($serchtravel as $columns)
+          <div class="col-md-4">
+            <div class="card mb-4 review">
+              <img src="{{ asset($columns->photo) }}" class="bd-placeholder-img card-img-top img-thumbnail" width="100%" height="225" />
+              <div class="card-body">
+                <p class="card-text">{{ $columns->travel }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">いいね数：{{ $columns->countnum }}</small>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ route('otherdetail',['id' => $columns->id]) }}">見る</a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+    </div>
 
 
 

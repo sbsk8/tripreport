@@ -19,13 +19,13 @@
   <main role="main">
     <section class="text-center">
       <p>都道府県から検索</p>
-        <form class="search_form">
+        <form class="search_form" action="{{ route('search') }}">
             <select type="text" class="prefecture" name="area">                          
                 @foreach(config('pref') as $key => $score)
                     <option value="{{ $score }}">{{ $score }}</option>
                 @endforeach
             </select>
-            <button type="button" class="btn btn-sm btn-outline-secondary"><a class="search_button" href="{{ route('search') }}">検索</a></button>
+            <p><input type="submit" class="btn btn-sm btn-outline-secondary" value="検索"></p>
         </form>
     </section>
 

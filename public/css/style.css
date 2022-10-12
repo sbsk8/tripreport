@@ -405,6 +405,9 @@ input.form-control{
 .search_button{
   margin-bottom: 0%;
 }
+.prefecture{
+  margin:10px 0;
+}
 
 @media (max-width: 768px) {
   .acount-contener{

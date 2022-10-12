@@ -24,8 +24,10 @@ class TripController extends Controller
         ->orderBy('countnum','desc')
         ->where('publish_status','=',2)
         ->get();
+
         return view('trip.otherindex',compact('othertravel'));
     }
+
 
     /**新規投稿 */
     public function NewArticle(){
@@ -213,9 +215,23 @@ class TripController extends Controller
     /**
      * 検索結果
     */
-    public function search(){
-        
-        return view('trip.seachresult');
+    public function search(Request $request){
+
+        $place = $request->area;
+
+        $serchtravel = DB::table('destination as d')
+        ->select([
+            'd.id','d.travel','d.photo',
+            DB::raw("(SELECT COUNT(user_id) FROM goods as g WHERE g.destination_id = d.id ) as countnum")
+            ])
+        ->orderBy('countnum','desc')
+        ->where('publish_status','=',2)
+        ->where('prefecture','=',$place)
+        ->get();
+
+        $count_travel = $serchtravel->count();
+
+        return view('trip.seachresult',compact('place','serchtravel','count_travel'));
     }
 
 
