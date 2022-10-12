@@ -18,7 +18,7 @@
 
   <section class="text-center">
       <p>都道府県から検索</p>
-        <form class="search_form">
+        <form class="search_form" action="{{ route('serch') }}">
             <select type="text" class="prefecture" name="area">                          
                 @foreach(config('pref') as $key => $score)
                     <option value="{{ $score }}">{{ $score }}</option>
