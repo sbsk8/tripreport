@@ -16,6 +16,18 @@
     @include ('layouts.app')
   </header>
 
+  <section class="text-center">
+      <p>都道府県から検索</p>
+        <form class="search_form">
+            <select type="text" class="prefecture" name="area">                          
+                @foreach(config('pref') as $key => $score)
+                    <option value="{{ $score }}">{{ $score }}</option>
+                @endforeach
+            </select>
+            <p><input type="submit" class="btn btn-sm btn-outline-secondary" value="検索"></p>
+        </form>
+    </section>
+
   <main role="main">
     <section class="jumbotron text-center">
       <div class="container">
