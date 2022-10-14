@@ -386,6 +386,9 @@ input.form-control{
 .table_sb th{
   font-weight: bold;
 }
+.hidden{
+  display: none;
+}
 
 @media (max-width: 768px) {
   .acount-contener{

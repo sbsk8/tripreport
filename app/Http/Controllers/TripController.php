@@ -23,7 +23,9 @@ class TripController extends Controller
             ])
         ->orderBy('countnum','desc')
         ->where('publish_status','=',2)
-        ->get();
+        ->paginate(12);
+        /**->get() */
+
         return view('trip.otherindex',compact('othertravel'));
     }
 
@@ -224,7 +226,7 @@ class TripController extends Controller
         ->orderBy('countnum','desc')
         ->where('publish_status','=',2)
         ->where('prefecture','=',$place)
-        ->get();
+        ->paginate(12);
         $count_travel = $serchtravel->count();
         return view('trip.seachresult',compact('place','serchtravel','count_travel'));
     }

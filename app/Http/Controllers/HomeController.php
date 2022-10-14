@@ -49,7 +49,7 @@ class HomeController extends Controller
                 ])
             ->where('user_id','=',$user)
             ->orderBy('id','desc')
-            ->get();
+            ->paginate(8);
 
         return view('home',compact('usertravel','othertravel','acount'));
     }

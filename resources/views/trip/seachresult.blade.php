@@ -55,6 +55,9 @@
             </div>
           </div>
           @endforeach
+          <div class="text-center">
+            {{ $serchtravel->links() }}
+          </div>
         </div>
       </div>
     </div>

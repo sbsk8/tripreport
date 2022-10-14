@@ -16,6 +16,7 @@
     @include ('layouts.app')
   </header>
 
+  
   <section class="text-center">
       <p>都道府県から検索</p>
         <form class="search_form" action="{{ route('serch') }}">
@@ -55,6 +56,9 @@
             </div>
           </div>
           @endforeach
+          <div class="text-center">
+            {{ $othertravel->links() }}
+          </div>
         </div>
       </div>
     </div>

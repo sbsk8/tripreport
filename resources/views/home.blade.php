@@ -75,6 +75,9 @@
             </div>
           </div>
           @endforeach
+          <div class="text-center">
+            {{ $usertravel->links() }}
+          </div>
         </div>
       </div>
     </div>
