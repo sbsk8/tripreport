@@ -20,11 +20,16 @@ php自作課題
 
 
 ### テストアカウント
+    一般ユーザー
 
     メールアドレス: test@gmail.com<br>
     
     パスワード:testtest
-
+    
+    管理者ユーザー
+    メーアドレス：admin@gmail.com<br>
+    
+    パスワード：admintest
 
 ## 開発環境
 
