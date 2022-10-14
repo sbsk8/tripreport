@@ -21,6 +21,9 @@ class AcountController extends Controller
 
     /**管理者権限投稿削除 */
     public function addelete($id){
+        $contents = DB::table('destination');
+        $contents->find($id);
+        $contents->delete();
         return redirect()->route('home')->with('flash_message','※投稿を削除しました');
     }
 
@@ -33,7 +36,7 @@ class AcountController extends Controller
         $users = DB::table('users');
         $users->find($id);
         $users->delete($id);
-        return view('admin.acountmane');
+        return redirect()->route('userAll')->with('flash_message','※ユーザーを削除しました');
     }
 
 

@@ -14,7 +14,7 @@ use App\Models\Good;
 
 class TripController extends Controller
 {
-    /**公開一覧 */
+    /**公開一覧 ページング追加 */
     public function otherindex(){
         $othertravel = DB::table('destination as d')
         ->select([
@@ -200,6 +200,8 @@ class TripController extends Controller
     */
     public function otherdetail($id){
         $user = Auth::id();
+        $users = DB::table('users');
+        $acount = $users->find($user);
         $destination = DB::table('destination');
         $data =$destination->find($id);
 
@@ -208,7 +210,7 @@ class TripController extends Controller
                 ->where('user_id','=',$user)
                 ->where('destination_id','=',$id)
                 ->first();
-        return view('trip.otherdetail',compact('data','good'));
+        return view('trip.otherdetail',compact('data','good','acount'));
     }
 
     /**検索結果 */
@@ -224,7 +226,7 @@ class TripController extends Controller
         ->where('prefecture','=',$place)
         ->get();
         $count_travel = $serchtravel->count();
-        return view('trip.seachresult',compact('place','count_travel'));
+        return view('trip.seachresult',compact('place','serchtravel','count_travel'));
     }
 
 

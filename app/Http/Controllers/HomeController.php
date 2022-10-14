@@ -39,6 +39,7 @@ class HomeController extends Controller
                 ])
             ->orderBy('countnum','desc')
             ->where('publish_status','=',2)
+            ->limit(4)
             ->get();
 
         $usertravel = DB::table('destination as d')
