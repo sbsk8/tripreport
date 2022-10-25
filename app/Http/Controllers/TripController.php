@@ -215,7 +215,11 @@ class TripController extends Controller
         return view('trip.otherdetail',compact('data','good','acount'));
     }
 
-    /**検索結果 */
+    /**検索結果
+     * @place 
+     * @count_travel
+     * 
+     */
     public function serch(Request $request){
         $place = $request['area'];
         $serchtravel = DB::table('destination as d')

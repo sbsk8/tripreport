@@ -66,9 +66,9 @@ ini_set('display_errors',1);
         <!-- /**いいね機能  //javaのgoodbutton発火 すでにいいねされていたらいいね取り消す*/ -->
         <div class="goodbutton">  
         @if($good !== null)
-            <a class="btn btn-secondary like-toggle liked" data-destination-id="{{ $data->id }}">☆いいね！</a>
+            <a class="btn btn-light like-toggle liked" data-destination-id="{{ $data->id }}">☆いいね</a>
         @else
-            <a class="btn btn-secondary like-toggle" data-destination-id="{{ $data->id }}">☆いいね！</a>
+            <a class="btn btn-light like-toggle" data-destination-id="{{ $data->id }}">☆いいね</a>
         @endif
         </div>
         <div class="goodcount">

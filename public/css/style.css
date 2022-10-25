@@ -310,12 +310,13 @@ input.form-control{
 
 /**　いいね機能　*/
 .liked {
+  color:#fff;
   background-color: rgb(229 51 27);
   border:rgb(215, 31, 7);
 }
 .liked:hover{
   color:#fff;
-  background-color: rgb(215, 31, 7);
+  background-color: rgb(215, 51, 7);
   border:rgb(215, 31, 7);
 }
 
