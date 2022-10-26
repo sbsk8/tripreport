@@ -14,7 +14,7 @@ class AcountController extends Controller
 {
 
     public function userAll(){
-        $user = DB::table('users')->get();
+        $user = DB::table('users')->paginate(20);
 
         return view('admin.acountmane',['user' =>$user]);
     }
@@ -38,6 +38,24 @@ class AcountController extends Controller
         $users->delete($id);
         return redirect()->route('userAll')->with('flash_message','※ユーザーを削除しました');
     }
+    //**ユーザー投稿一覧
+    // *@ id =ユーザーID
+    // *
+    //  */
 
+     public function triplist($id){
+
+        $travellist = DB::table('destination as d')
+        ->select([
+            'd.id','d.travel','d.photo',
+            DB::raw("(SELECT COUNT(user_id) FROM goods as g WHERE g.destination_id = d.id ) as countnum")
+            ])
+        ->orderBy('countnum','desc')
+        ->where('user_id','=',$id)
+        ->paginate(12);
+        /**->get() */
+
+        return view('admin.usertriplist',compact('travellist'));
+     }
 
 }

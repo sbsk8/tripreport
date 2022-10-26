@@ -88,3 +88,4 @@ Route::get('/manegimant/del/{id}',[App\Http\Controllers\AcountController::class,
 Route::post('/manegimant/del/{id}',[App\Http\Controllers\AcountController::class,'addelete'])->name('addelete');
 Route::get('/manegimant/userdel/{id}',[App\Http\Controllers\AcountController::class,'userdelete'])->name('userdelete');
 Route::post('/manegimant/userdel/{id}',[App\Http\Controllers\AcountController::class,'userdelete'])->name('userdelete');
+Route::get('/manegimant/triplist/{id}',[App\Http\Controllers\AcountController::class,'triplist'])->name('triplist');

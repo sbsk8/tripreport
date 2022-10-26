@@ -30,7 +30,7 @@
             <td>{{ $column->name }}</td>
             <td>{{ $column->email }}</td>
             <!-- /**編集 */ -->
-            <td><a href ="#">投稿一覧</a></td>
+            <td><a href ="{{ route ('triplist',['id' => $column->id ]) }}">投稿一覧</a></td>
             <!-- /**削除 */ -->
             <form method="post">
                 @csrf
@@ -40,13 +40,16 @@
         </tr>
         @endforeach
     </table>
+    <div class="text-center">
+      {{ $user->links() }}
+    </div>
   </div>
 </main>
 
     <footer class="text-muted">
         <div class="container">
         <p class="float-right">
-            <a href="#">トップに戻る</a>
+            <a href="{{ route('home') }}">トップに戻る</a>
         </p>
         </div>
     </footer>

@@ -16,33 +16,18 @@
     @include ('layouts.app')
   </header>
 
-  
-  <section class="text-center">
-    <div class="container">
-      <h1>都道府県から検索</h1>
-    </div>
-        <form class="search_form" action="{{ route('serch') }}">
-            <select type="text" class="prefecture" name="area">                          
-                @foreach(config('pref') as $key => $score)
-                    <option value="{{ $score }}">{{ $score }}</option>
-                @endforeach
-            </select>
-            <p><input type="submit" class="btn btn-sm btn-outline-secondary" value="検索"></p>
-        </form>
-    </section>
-
   <main role="main">
     <section class="jumbotron text-center">
       <div class="container">
-        <h1>公開された投稿一覧</h1>
-        <p class="lead atend">気になる記事はクリックして詳細を見てみよう！</p>
+        <h1>このユーザーが投稿した一覧</h1>
+        <p class="lead atend">不適切な記事の投稿は削除します。</p>
       </div>
     </section>
 
     <div class="album py-5 bg-light">
       <div class="container">
         <div class="row">
-          @foreach($othertravel as $columns)
+          @foreach($travellist as $columns)
           <div class="col-md-4">
             <div class="card mb-4 review">
               <img src="{{ asset($columns->photo) }}" class="bd-placeholder-img card-img-top img-thumbnail" width="100%" height="225" />
@@ -59,7 +44,7 @@
           </div>
           @endforeach
           <div class="text-center">
-            {{ $othertravel->links() }}
+            {{ $travellist->links() }}
           </div>
         </div>
       </div>
