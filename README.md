@@ -22,15 +22,15 @@ php自作課題
 ### テストアカウント
     一般ユーザー
 
-    メールアドレス: test@gmail.com<br>
+    メールアドレス: test@gmail.com
     
     パスワード:testtest
     
     管理者ユーザー
     
-    メーアドレス：admin@gmail.com<br>
+    メーアドレス：admin@gmail.com
     
-    パスワード：admintest
+    パスワード：testadmin
 
 ## 開発環境
 
